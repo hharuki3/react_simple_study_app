@@ -1,25 +1,24 @@
 import { Button, Input } from "@chakra-ui/react";
-import { useState } from "react";
 
-export const CreateStudy = () => {
-  const [title, setTitle] = useState<string>("");
-  const [detail, setDetail] = useState<string>("");
-  const [date, setDate] = useState<string>("");
-
-  const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.target.value);
-  };
-  const onChangeDetail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDetail(e.target.value);
-  };
-  const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDate(e.target.value);
-  };
-  const onClickButton = () => {
-    console.log(title);
-    console.log(detail);
-    console.log(date);
-  }
+type Props = {
+  title: string;
+  detail: string;
+  date: string;
+  onChangeTitle: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeDetail: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeDate: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onClickButton: () => void;
+};
+export const CreateStudy = (props: Props) => {
+  const {
+    title,
+    detail,
+    date,
+    onChangeTitle,
+    onChangeDetail,
+    onChangeDate,
+    onClickButton,
+  } = props;
   return (
     <div>
       <h2>勉強したこと/ものを追加</h2>
