@@ -1,4 +1,4 @@
-import { Button, Input } from "@chakra-ui/react";
+import { Button, Flex, Heading, Input } from "@chakra-ui/react";
 
 type Props = {
   title: string;
@@ -21,17 +21,33 @@ export const CreateStudy = (props: Props) => {
   } = props;
   return (
     <div>
-      <h2>勉強したこと/ものを追加</h2>
-      <Input placeholder="タイトル" value={title} onChange={onChangeTitle} />
-      <Input placeholder="詳細" value={detail} onChange={onChangeDetail} />
-      <Input
-        placeholder="Select Date and Time"
-        size="md"
-        type="datetime-local"
-        value={date}
-        onChange={onChangeDate}
-      />
-      <Button onClick={onClickButton}>追加</Button>
+      <Heading as="h2">勉強したこと/ものを追加</Heading>
+      <Flex mx={20} px={2}>
+        <Input
+          placeholder="タイトル"
+          value={title}
+          onChange={onChangeTitle}
+          mb={4}
+          size="md"
+        />
+        <Input
+          placeholder="詳細"
+          value={detail}
+          onChange={onChangeDetail}
+          mb={4}
+        />
+        <Input
+          placeholder="Select Date and Time"
+          size="md"
+          type="datetime-local"
+          value={date}
+          onChange={onChangeDate}
+          mb={4}
+        />
+        <Button onClick={onClickButton} colorScheme="teal" size="md" px={10}>
+          追加
+        </Button>
+      </Flex>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CreateStudy } from "./components/CreateStudy";
 import { StudyList } from "./components/StudyList";
+import { Heading } from "@chakra-ui/react";
 
 export const Study = () => {
   const [title, setTitle] = useState<string>("");
@@ -30,7 +31,7 @@ export const Study = () => {
   };
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>勉強アプリ</h1>
+      <Heading as="h1">勉強アプリ</Heading>
       {/* ここにコンポーネントを差し込む */}
       <CreateStudy
         title={title}

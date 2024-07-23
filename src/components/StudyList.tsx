@@ -11,7 +11,7 @@ export const StudyList = (props: Props) => {
       <h2>勉強した内容一覧</h2>
       {completeStudy.map((study, index) => {
         return (
-          <div key={index}>
+          <div key={index} style={{marginBottom: "10px"}}>
             <span style={{ fontWeight: "bold" }}>{study[0]}</span>
             <span>{study[1]}</span>
             <span>{study[2]}</span>
