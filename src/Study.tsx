@@ -6,6 +6,7 @@ export const Study = () => {
   const [title, setTitle] = useState<string>("");
   const [detail, setDetail] = useState<string>("");
   const [date, setDate] = useState<string>("");
+  const [completeStudy, setCompleteStudy] = useState<Array<Array<string>>>([]);
 
   const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
@@ -17,10 +18,15 @@ export const Study = () => {
     setDate(e.target.value);
   };
   const onClickButton = () => {
-    console.log(title);
-    console.log(detail);
-    console.log(date);
-    alert("追加しました");
+    setCompleteStudy([...completeStudy, [title, detail, date]]);
+    setTitle("");
+    setDetail("");
+    setDate("");
+  };
+  const onClickDelete = (index: number) => {
+    const updatedStudy = [...completeStudy];
+    updatedStudy.splice(index, 1);
+    setCompleteStudy(updatedStudy);
   };
   return (
     <div style={{ textAlign: "center" }}>
@@ -35,7 +41,7 @@ export const Study = () => {
         onChangeTitle={onChangeTitle}
         onClickButton={onClickButton}
       />
-      <StudyList />
+      <StudyList completeStudy={completeStudy} onClickDelete={onClickDelete} />
     </div>
   );
 };
