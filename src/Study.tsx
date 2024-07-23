@@ -37,6 +37,7 @@ export const Study = () => {
         title={title}
         detail={detail}
         date={date}
+        disabled={title === "" || detail === "" || date === ""}
         onChangeDate={onChangeDate}
         onChangeDetail={onChangeDetail}
         onChangeTitle={onChangeTitle}

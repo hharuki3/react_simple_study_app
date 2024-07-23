@@ -4,6 +4,7 @@ type Props = {
   title: string;
   detail: string;
   date: string;
+  disabled: boolean;
   onChangeTitle: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeDetail: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeDate: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -14,6 +15,7 @@ export const CreateStudy = (props: Props) => {
     title,
     detail,
     date,
+    disabled,
     onChangeTitle,
     onChangeDetail,
     onChangeDate,
@@ -44,7 +46,7 @@ export const CreateStudy = (props: Props) => {
           onChange={onChangeDate}
           mb={4}
         />
-        <Button onClick={onClickButton} colorScheme="teal" size="md" px={10}>
+        <Button onClick={onClickButton} colorScheme="teal" size="md" px={10} isDisabled={disabled}>
           追加
         </Button>
       </Flex>
