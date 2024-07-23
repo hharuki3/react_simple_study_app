@@ -1,17 +1,17 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Heading } from "@chakra-ui/react";
 
 type Props = {
   completeStudy: Array<Array<string>>;
   onClickDelete: (index: number) => void;
 };
 export const StudyList = (props: Props) => {
-  const {completeStudy, onClickDelete } = props;
+  const { completeStudy, onClickDelete } = props;
   return (
     <div>
-      <h2>勉強した内容一覧</h2>
+      <Heading size="lg">勉強した内容一覧</Heading>
       {completeStudy.map((study, index) => {
         return (
-          <div key={index} style={{marginBottom: "10px"}}>
+          <div key={index} style={{ marginBottom: "10px" }}>
             <span style={{ fontWeight: "bold" }}>{study[0]}</span>
             <span>{study[1]}</span>
             <span>{study[2]}</span>

@@ -31,7 +31,7 @@ export const Study = () => {
   };
   return (
     <div style={{ textAlign: "center" }}>
-      <Heading as="h1">勉強アプリ</Heading>
+      <Heading as="h1" mb={5}>勉強アプリ</Heading>
       {/* ここにコンポーネントを差し込む */}
       <CreateStudy
         title={title}

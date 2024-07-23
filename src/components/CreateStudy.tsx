@@ -21,7 +21,7 @@ export const CreateStudy = (props: Props) => {
   } = props;
   return (
     <div>
-      <Heading as="h2">勉強したこと/ものを追加</Heading>
+      <Heading size="lg">勉強したこと/ものを追加</Heading>
       <Flex mx={20} px={2}>
         <Input
           placeholder="タイトル"
